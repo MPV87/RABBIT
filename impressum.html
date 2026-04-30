@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum – RABBIT Nicotine Pouches</title>
+<link rel="icon" type="image/svg+xml" href="Logo_Rabbit.svg" id="fav-svg">
+<script>
+  window.addEventListener('load', function() {
+    var img = new Image();
+    img.onload = function() {
+      var c = document.createElement('canvas');
+      c.width = 64; c.height = 64;
+      var ctx = c.getContext('2d');
+      ctx.drawImage(img, 0, 0, 64, 64);
+      var d = ctx.getImageData(0, 0, 64, 64);
+      for (var i = 0; i < d.data.length; i += 4) {
+        if (d.data[i+3] > 0) { d.data[i]=0; d.data[i+1]=0; d.data[i+2]=0; }
+      }
+      ctx.putImageData(d, 0, 0);
+      var lnk = document.createElement('link');
+      lnk.rel = 'icon'; lnk.href = c.toDataURL('image/png');
+      document.head.appendChild(lnk);
+      var old = document.getElementById('fav-svg');
+      if (old) old.remove();
+    };
+    img.src = 'Logo_Rabbit.svg';
+  });
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080808;
+    --dark: #0f0f0f;
+    --card: #141414;
+    --white: #f0f0f0;
+    --muted: #666;
+    --gold: #f5c842;
+    --red: #ff3a3a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* AGE BAR */
+  .age-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: #111;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 24px;
+  }
+  .age-bar-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(240,240,240,0.9);
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 34px; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 48px;
+    background: rgba(8,8,8,0.97);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo img { height: 126px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+  .nav-links a {
+    color: rgba(240,240,240,0.6);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a.active { color: var(--gold); }
+
+  /* MAIN */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 220px 48px 100px;
+  }
+
+  .page-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .page-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
+  }
+  .page-label span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 8vw, 96px);
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 60px;
+  }
+
+  .imp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+
+  .imp-block {
+    background: var(--card);
+    padding: 28px 32px;
+  }
+
+  .imp-block.full {
+    grid-column: 1 / -1;
+  }
+
+  .imp-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .imp-val {
+    font-size: 15px;
+    color: rgba(240,240,240,0.8);
+    line-height: 1.8;
+  }
+  .imp-val a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .imp-val a:hover { text-decoration: underline; }
+
+  .imp-legal {
+    background: var(--card);
+    padding: 32px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 2px;
+  }
+  .imp-legal a { color: var(--gold); text-decoration: none; }
+  .imp-legal a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: var(--dark);
+  }
+  .footer-logo img { height: 28px; width: auto; opacity: 0.6; }
+  .footer-note { font-size: 11px; color: var(--muted); line-height: 1.6; text-align: center; }
+  .footer-back {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-back:hover { color: var(--gold); }
+
+  /* MOBILE */
+  @media (max-width: 700px) {
+    nav { padding: 12px 20px; }
+    .nav-links { display: none; }
+    main { padding: 200px 24px 80px; }
+    .imp-grid { grid-template-columns: 1fr; }
+    .imp-block.full { grid-column: 1; }
+    footer { flex-direction: column; text-align: center; padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- AGE BAR -->
+<div class="age-bar">
+  <span class="age-bar-text">Nur über 18 Jahre · Dieses Produkt enthält Nikotin und macht abhängig.</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="Logo_Rabbit.svg" alt="Rabbit"
+      onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('beforeend','<span style=\'font-family:Bebas Neue,sans-serif;font-size:26px;letter-spacing:4px;color:#f0f0f0;\'>RAB<span style=\'color:#f5c842\'>B</span>IT</span>')">
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="index.html#produkte">Sorten</a></li>
+    <li><a href="index.html#erhaeltlich">Erhältlich</a></li>
+    <li><a href="impressum.html" class="active">Impressum</a></li>
+  </ul>
+</nav>
+
+<!-- MAIN -->
+<main>
+  <div class="page-label"><span>Rechtliches</span></div>
+  <h1>IMPRESSUM</h1>
+
+  <div class="imp-grid">
+
+    <div class="imp-block">
+      <div class="imp-label">Unternehmen</div>
+      <div class="imp-val">
+        KP-Plattner GmbH<br>
+        Raucherbedarf und Werbeartikel
+      </div>
+    </div>
+
+    <div class="imp-block">
+      <div class="imp-label">Adresse</div>
+      <div class="imp-val">
+        Steinbockallee 9<br>
+        A-6063 Innsbruck
+      </div>
+    </div>
+
+    <div class="imp-block">
+      <div class="imp-label">Kontakt</div>
+      <div class="imp-val">
+        Tel.: <a href="tel:+43512264064">+43 512 264064</a><br>
+        E-Mail: <a href="mailto:office@kp-plattner.at">office@kp-plattner.at</a>
+      </div>
+    </div>
+
+    <div class="imp-block">
+      <div class="imp-label">Geschäftsführer</div>
+      <div class="imp-val">Mag. Philipp Plattner</div>
+    </div>
+
+    <div class="imp-block">
+      <div class="imp-label">UID-Nummer</div>
+      <div class="imp-val">ATU72442216</div>
+    </div>
+
+    <div class="imp-block">
+      <div class="imp-label">Firmenbuchnummer</div>
+      <div class="imp-val">FN 474216b</div>
+    </div>
+
+    <div class="imp-block">
+      <div class="imp-label">Firmenbuchgericht</div>
+      <div class="imp-val">Landesgericht Innsbruck</div>
+    </div>
+
+    <div class="imp-block">
+      <div class="imp-label">Kammer</div>
+      <div class="imp-val">WKO Tirol, Handel</div>
+    </div>
+
+  </div>
+
+  <div class="imp-legal">
+    <strong style="color:rgba(240,240,240,0.55);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;text-transform:uppercase;font-size:12px;">Online-Streitbeilegung</strong><br>
+    Verbraucher haben die Möglichkeit, Beschwerden an die Online-Streitbeilegungsplattform der EU zu richten: <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a>. Sie können allfällige Beschwerden auch an die oben angegebene E-Mail-Adresse richten.<br><br>
+    Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung und Offenlegungspflicht laut §25 Mediengesetz.
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="Logo_Rabbit.svg" alt="Rabbit"
+      onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('beforeend','<span style=\'font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:4px;color:#f0f0f0;\'>RAB<span style=\'color:#f5c842\'>B</span>IT</span>')">
+  </div>
+  <div class="footer-note">
+    Dieses Produkt enthält Nikotin – einen der Stoffe, der sehr stark abhängig macht.<br>
+    Nicht für Minderjährige. Nur für Erwachsene geeignet.
+  </div>
+  <a href="index.html" class="footer-back">← Zurück zur Startseite</a>
+</footer>
+
+</body>
+</html>
