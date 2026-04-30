@@ -4,7 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RABBIT – X-STRONG Nicotine Pouches</title>
+<link rel="icon" type="image/svg+xml" href="Logo_Rabbit.svg" id="fav-svg">
+<script>
+  window.addEventListener('load', function() {
+    var img = new Image();
+    img.onload = function() {
+      var c = document.createElement('canvas');
+      c.width = 64; c.height = 64;
+      var ctx = c.getContext('2d');
+      ctx.drawImage(img, 0, 0, 64, 64);
+      var d = ctx.getImageData(0, 0, 64, 64);
+      for (var i = 0; i < d.data.length; i += 4) {
+        if (d.data[i+3] > 0) { d.data[i]=0; d.data[i+1]=0; d.data[i+2]=0; }
+      }
+      ctx.putImageData(d, 0, 0);
+      var lnk = document.createElement('link');
+      lnk.rel = 'icon'; lnk.href = c.toDataURL('image/png');
+      document.head.appendChild(lnk);
+      var old = document.getElementById('fav-svg');
+      if (old) old.remove();
+    };
+    img.src = 'Logo_Rabbit.svg';
+  });
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="Logo_Rabbit_black.svg">
+<link rel="shortcut icon" href="Logo_Rabbit_black.svg">
 <style>
   :root {
     --black: #080808;
@@ -44,30 +69,20 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 200;
-    background: #1a0000;
-    border-bottom: 1px solid rgba(255,58,58,0.3);
+    background: #111;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
     padding: 7px 24px;
-  }
-  .age-bar-icon {
-    font-size: 13px;
-    flex-shrink: 0;
-    color: var(--red);
   }
   .age-bar-text {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 12px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    font-weight: 700;
-    color: rgba(240,240,240,0.75);
-  }
-  .age-bar-text strong {
-    color: var(--red);
-    font-weight: 900;
+    font-weight: 600;
+    color: rgba(240,240,240,0.9);
   }
 
   /* ===== NAV ===== */
@@ -78,11 +93,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 48px;
+    padding: 12px 48px;
     background: linear-gradient(to bottom, rgba(8,8,8,0.85) 0%, transparent 100%);
   }
   .nav-logo img {
-    height: 42px;
+    height: 126px;
     width: auto;
     display: block;
   }
@@ -102,18 +117,6 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--white); }
-  .nav-trafik {
-    display: inline-flex !important;
-    align-items: center;
-    gap: 8px;
-    background: var(--gold) !important;
-    color: var(--black) !important;
-    padding: 10px 22px;
-    font-weight: 700 !important;
-    letter-spacing: 2px !important;
-    transition: opacity 0.2s !important;
-  }
-  .nav-trafik:hover { opacity: 0.85 !important; color: var(--black) !important; }
 
   /* ===== HERO ===== */
   #hero {
@@ -128,7 +131,7 @@
   .hero-bg-img {
     position: absolute;
     inset: 0;
-    background: url('hero.png') center center / cover no-repeat;
+    background: url('Hero.jpg') center center / cover no-repeat;
     z-index: 0;
   }
 
@@ -493,9 +496,9 @@
 
 <!-- AGE WARNING BAR -->
 <div class="age-bar">
-  <span class="age-bar-icon">⚠</span>
-  <span class="age-bar-text"><strong>Nur über 18 Jahre.</strong> &nbsp;·&nbsp; Dieses Produkt enthält Nikotin und macht abhängig.</span>
-  <span class="age-bar-icon">⚠</span>
+  
+  <span class="age-bar-text">Nur über 18 Jahre · Dieses Produkt enthält Nikotin und macht abhängig.</span>
+  
 </div>
 
 <!-- NAV -->
@@ -507,7 +510,6 @@
   <ul class="nav-links">
     <li><a href="#produkte">Sorten</a></li>
     <li><a href="#erhaeltlich">Erhältlich</a></li>
-    <li><a href="#erhaeltlich" class="nav-trafik">🏪 In Trafiken erhältlich</a></li>
   </ul>
 </nav>
 
@@ -596,7 +598,7 @@
 
       <div class="product-card blue reveal">
         <div class="product-img-wrap">
-          <img src="75700.png" alt="Rabbit Blue Ice">
+          <img src="75700_1.png" alt="Rabbit Blue Ice">
         </div>
         <div class="product-body">
           <div class="product-artnr">Art.Nr. 75700</div>
@@ -621,7 +623,7 @@
 
       <div class="product-card green reveal">
         <div class="product-img-wrap">
-          <img src="75701.png" alt="Rabbit Ice Hemp">
+          <img src="75701_1.png" alt="Rabbit Ice Hemp">
         </div>
         <div class="product-body">
           <div class="product-artnr">Art.Nr. 75701</div>
@@ -646,7 +648,7 @@
 
       <div class="product-card red reveal">
         <div class="product-img-wrap">
-          <img src="75702.png" alt="Rabbit Cola">
+          <img src="75702_1.png" alt="Rabbit Cola">
         </div>
         <div class="product-body">
           <div class="product-artnr">Art.Nr. 75702</div>
@@ -671,7 +673,7 @@
 
       <div class="product-card pink reveal">
         <div class="product-img-wrap">
-          <img src="75703.png" alt="Rabbit Grape">
+          <img src="75703_1.png" alt="Rabbit Grape">
         </div>
         <div class="product-body">
           <div class="product-artnr">Art.Nr. 75703</div>
