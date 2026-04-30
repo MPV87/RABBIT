@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutz – RABBIT Nicotine Pouches</title>
+<link rel="icon" type="image/svg+xml" href="Logo_Rabbit.svg" id="fav-svg">
+<script>
+  window.addEventListener('load', function() {
+    var img = new Image();
+    img.onload = function() {
+      var c = document.createElement('canvas');
+      c.width = 64; c.height = 64;
+      var ctx = c.getContext('2d');
+      ctx.drawImage(img, 0, 0, 64, 64);
+      var d = ctx.getImageData(0, 0, 64, 64);
+      for (var i = 0; i < d.data.length; i += 4) {
+        if (d.data[i+3] > 0) { d.data[i]=0; d.data[i+1]=0; d.data[i+2]=0; }
+      }
+      ctx.putImageData(d, 0, 0);
+      var lnk = document.createElement('link');
+      lnk.rel = 'icon'; lnk.href = c.toDataURL('image/png');
+      document.head.appendChild(lnk);
+      var old = document.getElementById('fav-svg');
+      if (old) old.remove();
+    };
+    img.src = 'Logo_Rabbit.svg';
+  });
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080808;
+    --dark: #0f0f0f;
+    --card: #141414;
+    --white: #f0f0f0;
+    --muted: #666;
+    --gold: #f5c842;
+    --red: #ff3a3a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* AGE BAR */
+  .age-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: #111;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 24px;
+  }
+  .age-bar-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(240,240,240,0.9);
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 34px; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 48px;
+    background: rgba(8,8,8,0.97);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo img { height: 126px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+  .nav-links a {
+    color: rgba(240,240,240,0.6);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a.active { color: var(--gold); }
+
+  /* MAIN */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 220px 48px 100px;
+  }
+
+  .page-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .page-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
+  }
+  .page-label span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 8vw, 96px);
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 60px;
+  }
+
+  .ds-section {
+    background: var(--card);
+    padding: 32px;
+    margin-bottom: 2px;
+  }
+
+  .ds-section h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .ds-section p {
+    font-size: 14px;
+    color: rgba(240,240,240,0.7);
+    line-height: 1.85;
+  }
+
+  .ds-section p + p {
+    margin-top: 12px;
+  }
+
+  .ds-section a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .ds-section a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: var(--dark);
+  }
+  .footer-logo img { height: 28px; width: auto; opacity: 0.6; }
+  .footer-note { font-size: 11px; color: var(--muted); line-height: 1.6; text-align: center; }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-links a.active { color: var(--gold); }
+
+  /* MOBILE */
+  @media (max-width: 700px) {
+    nav { padding: 12px 20px; }
+    .nav-links { display: none; }
+    main { padding: 200px 24px 80px; }
+    footer { flex-direction: column; text-align: center; padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- AGE BAR -->
+<div class="age-bar">
+  <span class="age-bar-text">Nur über 18 Jahre · Dieses Produkt enthält Nikotin und macht abhängig.</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="Logo_Rabbit.svg" alt="Rabbit"
+      onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('beforeend','<span style=\'font-family:Bebas Neue,sans-serif;font-size:26px;letter-spacing:4px;color:#f0f0f0;\'>RAB<span style=\'color:#f5c842\'>B</span>IT</span>')">
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="index.html#produkte">Sorten</a></li>
+    <li><a href="index.html#erhaeltlich">Erhältlich</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="datenschutz.html" class="active">Datenschutz</a></li>
+  </ul>
+</nav>
+
+<!-- MAIN -->
+<main>
+  <div class="page-label"><span>Rechtliches</span></div>
+  <h1>DATENSCHUTZ</h1>
+
+  <div class="ds-section">
+    <h2>Geltungsbereich</h2>
+    <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003). Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und die Zwecke der Erhebung und Verwendung personenbezogener Daten durch den verantwortlichen Anbieter KP-Plattner GmbH, Raucherbedarf und Werbeartikel, Steinbockallee 9, A-6063 Innsbruck, Tel.: <a href="tel:+43512264064">+43 512 264064</a>, E-Mail: <a href="mailto:office@kp-plattner.at">office@kp-plattner.at</a>, auf dieser Website (im Folgenden „Angebot") auf.</p>
+  </div>
+
+  <div class="ds-section">
+    <h2>Begriffsdefinitionen</h2>
+    <p>Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen (z.B. Name, E-Mail-Adresse, Telefonnummer). Verarbeitung meint jeden Vorgang im Zusammenhang mit diesen Daten, sei es das Erheben, Speichern, Ändern oder Weitergeben.</p>
+  </div>
+
+  <div class="ds-section">
+    <h2>Zugriffsdaten / Server-Logfiles</h2>
+    <p>Der Anbieter (beziehungsweise sein Webspace-Provider) erhebt Daten über jeden Zugriff auf das Angebot (sogenannte Serverlogfiles). Zu den Zugriffsdaten gehören: Name der abgerufenen Webseite, Datei, Datum und Uhrzeit des Abrufs, übertragene Datenmenge, Meldung über erfolgreichen Abruf, Browsertyp nebst Version, das Betriebssystem des Nutzers, Referrer URL (die zuvor besuchte Seite), IP-Adresse und der anfragende Provider.</p>
+    <p>Der Anbieter verwendet die Protokolldaten nur für statistische Auswertungen zum Zweck des Betriebs, der Sicherheit und der Optimierung des Angebotes. Protokolldaten werden für eine Dauer von maximal 30 Tagen gespeichert, es sei denn, es besteht der berechtigte Verdacht auf eine rechtswidrige Nutzung.</p>
+  </div>
+
+  <div class="ds-section">
+    <h2>Umgang mit personenbezogenen Daten</h2>
+    <p>Personenbezogene Daten werden vom Anbieter nur dann erhoben, genutzt und weitergegeben, wenn dies gesetzlich erlaubt ist oder die Nutzer in die Datenerhebung einwilligen.</p>
+  </div>
+
+  <div class="ds-section">
+    <h2>Kontaktaufnahme</h2>
+    <p>Bei der Kontaktaufnahme mit dem Anbieter (zum Beispiel per Kontaktformular oder E-Mail) werden die Angaben des Nutzers zwecks Bearbeitung der Anfrage sowie für den Fall, dass Anschlussfragen entstehen, für die Dauer von 1 Jahr gespeichert.</p>
+  </div>
+
+  <div class="ds-section">
+    <h2>Datenspeicherung</h2>
+    <p>Wir weisen darauf hin, dass zum Zweck der Vertragsabwicklung folgende Daten auch bei uns gespeichert werden: Firmenname, Ansprechpartner, Adresse, E-Mail und eventuell UID-Nummer.</p>
+    <p>Die von Ihnen bereitgestellten Daten sind zur Vertragserfüllung bzw. zur Durchführung vorvertraglicher Maßnahmen erforderlich. Ohne diese Daten können wir den Vertrag mit Ihnen nicht abschließen. Eine Datenübermittlung an Dritte erfolgt nicht, mit Ausnahme des von uns beauftragten Transportunternehmens/Versandunternehmens zur Zustellung der Ware sowie an unseren Steuerberater zur Erfüllung unserer steuerrechtlichen Verpflichtungen. Zudem hat eine externe EDV-Firma Zugang zum Firmenserver im Zusammenhang mit der technischen Betreuung.</p>
+    <p>Im Falle eines Vertragsabschlusses werden sämtliche Daten aus dem Vertragsverhältnis bis zum Ablauf der steuerrechtlichen Aufbewahrungsfrist gespeichert. Die Daten Name, Anschrift, gekaufte Ware und Kaufdatum werden darüber hinaus bis zum Ablauf der Produkthaftung (10 Jahre) gespeichert. Die Datenverarbeitung erfolgt auf Basis der gesetzlichen Bestimmungen des § 96 Abs 3 TKG sowie des Art 6 Abs 1 lit a (Einwilligung) und lit b (notwendig zur Vertragserfüllung) der DSGVO.</p>
+  </div>
+
+  <div class="ds-section">
+    <h2>Kommentare und Beiträge</h2>
+    <p>Wenn Nutzer Kommentare im Blog oder sonstige Beiträge hinterlassen, werden ihre IP-Adressen gespeichert. Das erfolgt zur Sicherheit des Anbieters, falls jemand widerrechtliche Inhalte schreibt (Beleidigungen, verbotene politische Propaganda, etc.). In diesem Fall kann der Anbieter selbst für den Kommentar oder Beitrag belangt werden und ist daher an der Identität des Verfassers interessiert.</p>
+  </div>
+
+  <div class="ds-section">
+    <h2>Newsletter</h2>
+    <p>Mit dem Newsletter informieren wir Sie über uns und unsere Angebote.</p>
+    <p>Wenn Sie den Newsletter empfangen möchten, benötigen wir von Ihnen Ihren Namen, eine valide E-Mail-Adresse sowie Informationen, die uns die Überprüfung gestatten, dass Sie der Inhaber der angegebenen E-Mail-Adresse sind bzw. deren Inhaber mit dem Empfang des Newsletters einverstanden ist. Weitere Daten werden nicht erhoben. Diese Daten werden nur für den Versand der Newsletter verwendet und nicht an Dritte weitergegeben.</p>
+    <p>Mit der Anmeldung zum Newsletter speichern wir Ihre IP-Adresse und das Datum der Anmeldung. Diese Speicherung dient alleine dem Nachweis im Fall, dass ein Dritter eine E-Mail-Adresse missbraucht und sich ohne Wissen des Berechtigten für den Newsletter anmeldet.</p>
+    <p>Ihre Einwilligung zur Speicherung der Daten, Name, E-Mail-Adresse sowie deren Nutzung zum Versand des Newsletters können Sie jederzeit widerrufen. Der Widerruf kann über einen Link in den Newslettern selbst oder per Mitteilung an die obenstehenden Kontaktmöglichkeiten erfolgen.</p>
+  </div>
+
+  <div class="ds-section">
+    <h2>Einbindung von Diensten und Inhalten Dritter</h2>
+    <p>Es kann vorkommen, dass innerhalb dieses Onlineangebotes Inhalte Dritter, wie z.B. Videos von YouTube, Kartenmaterial von Google Maps, RSS-Feeds oder Grafiken von anderen Webseiten eingebunden werden. Dies setzt immer voraus, dass die Anbieter dieser Inhalte (nachfolgend bezeichnet als „Dritt-Anbieter") die IP-Adresse der Nutzer wahrnehmen. Denn ohne die IP-Adresse könnten sie die Inhalte nicht an den Browser des jeweiligen Nutzers senden. Die IP-Adresse ist damit für die Darstellung dieser Inhalte erforderlich. Wir bemühen uns, nur solche Inhalte zu verwenden, deren jeweilige Anbieter die IP-Adresse lediglich zur Auslieferung der Inhalte verwenden. Jedoch haben wir keinen Einfluss darauf, falls die Dritt-Anbieter die IP-Adresse z.B. für statistische Zwecke speichern. Soweit dies uns bekannt ist, klären wir die Nutzer darüber auf.</p>
+  </div>
+
+  <div class="ds-section">
+    <h2>Cookies</h2>
+    <p>Cookies sind kleine Dateien, die es ermöglichen, auf dem Zugriffsgerät der Nutzer (PC, Smartphone o.ä.) spezifische, auf das Gerät bezogene Informationen zu speichern. Sie dienen zum einen der Benutzerfreundlichkeit von Webseiten und damit den Nutzern (z.B. Speicherung von Logindaten). Zum anderen dienen sie dazu, statistische Daten der Webseitennutzung zu erfassen und sie zwecks Verbesserung des Angebotes analysieren zu können. Die Nutzer können auf den Einsatz der Cookies Einfluss nehmen. Die meisten Browser verfügen über eine Option, mit der das Speichern von Cookies eingeschränkt oder komplett verhindert wird. Allerdings wird darauf hingewiesen, dass die Nutzung und insbesondere der Nutzungskomfort ohne Cookies eingeschränkt werden.</p>
+  </div>
+
+  <div class="ds-section">
+    <h2>Web-Analyse</h2>
+    <p>Dieses Angebot benutzt Google Analytics, einen Webanalysedienst der Google Inc. („Google"). Google Analytics verwendet sog. „Cookies", Textdateien, die auf Computer der Nutzer gespeichert werden und die eine Analyse der Benutzung der Website durch sie ermöglichen. Die durch den Cookie erzeugten Informationen über die Benutzung dieser Website durch die Nutzer werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.</p>
+    <p>Im Falle der Aktivierung der IP-Anonymisierung auf dieser Webseite wird die IP-Adresse der Nutzer von Google jedoch innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Die IP-Anonymisierung ist auf dieser Website aktiv. Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um die Nutzung der Website durch die Nutzer auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen.</p>
+    <p>Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Die Nutzer können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; dieses Angebot weist die Nutzer jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können. Die Nutzer können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>.</p>
+  </div>
+
+  <div class="ds-section">
+    <h2>Ihre Rechte</h2>
+    <p>Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der Österreichischen Datenschutzbehörde, Barichgasse 40-42, 1030 Wien, beschweren.</p>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="Logo_Rabbit.svg" alt="Rabbit"
+      onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('beforeend','<span style=\'font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:4px;color:#f0f0f0;\'>RAB<span style=\'color:#f5c842\'>B</span>IT</span>')">
+  </div>
+  <div class="footer-note">
+    Dieses Produkt enthält Nikotin – einen der Stoffe, der sehr stark abhängig macht.<br>
+    Nicht für Minderjährige. Nur für Erwachsene geeignet.
+  </div>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html" class="active">Datenschutz</a>
+  </div>
+</footer>
+
+</body>
+</html>
